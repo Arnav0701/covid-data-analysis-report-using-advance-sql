@@ -6,11 +6,11 @@ This project performs an in-depth analysis of global COVID-19 data using SQL. It
 
 The project is divided into two main parts:
 
-🧹 Data Preprocessing & Cleaning
-📈 Analytical Queries & Insights
+1)🧹 Data Preprocessing & Cleaning
+2)📈 Analytical Queries & Insights
 
+  
 🧹PART 1: Data Preprocessing
-
 Before performing analysis, the dataset was cleaned and standardized to ensure data consistency and accurate joins.
 
 🔧 Key Cleaning Steps
@@ -40,7 +40,6 @@ Enabled accurate joins between datasets
 Improved reliability of all downstream analysis
 
 📈 PART 2: Data Analysis
-
 The analysis focuses on two major aspects:
 
 🔹 Part 1: Impact & Scale
