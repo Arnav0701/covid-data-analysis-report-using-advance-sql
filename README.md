@@ -38,7 +38,13 @@ Before performing analysis, the dataset was cleaned and standardized to ensure d
 
 4. **Data Alignment for Joins**  
    Matched `country_region` (COVID data) with `country_name` (population data)  
-   Ensured compatibility for analytical queries like infection rates  
+   Ensured compatibility for analytical queries like infection rates
+
+5. **Handling Missing (NULL) Values**  
+   Ensured data completeness and accuracy by addressing missing values:  
+   - Treated NULL values in numerical fields (e.g., confirmed, deaths, recoveries) to avoid incorrect aggregations  
+   - Applied default values where appropriate to maintain continuity in time-series analysis  
+   - Prevented NULL values from impacting window functions and trend calculations  
 
 ### 🎯 Outcome of Preprocessing
 
