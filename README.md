@@ -1,128 +1,85 @@
-# covid-data-analysis-report-using-advance-sql
+🦠 COVID-19 Global Data Analysis using SQL
+📌 Executive Summary
 
-## 📌 Overview
+This project analyzes global COVID-19 data to understand the impact, spread, and progression of the pandemic.
 
-This project performs an in-depth analysis of global COVID-19 data using SQL. It focuses on understanding the impact, spread, and trends of the pandemic across countries by combining case data with population statistics.
+Key Insights:
+Countries with high Case Fatality Rate (CFR) indicate potential healthcare system stress
+Infection rates relative to population reveal true penetration beyond raw case counts
+Multiple countries experienced simultaneous peaks, suggesting global transmission waves
+Recovery trends lag behind confirmed cases, highlighting healthcare response delays
+Data inconsistencies in some regions indicate reporting reliability issues
+🧠 Problem Statement
 
-The project is divided into two main parts:
+To analyze COVID-19 data using SQL and uncover:
 
-1. 🧹 Data Preprocessing & Cleaning  
-2. 📈 Analytical Queries & Insights  
+Severity of the pandemic
+Spread across populations
+Temporal trends and growth patterns
+🛠️ Tools & Technologies
+SQL (Advanced queries, Window functions)
+Power BI (Visualization)
+Dataset: Global COVID-19 dataset
+🧹 Data Cleaning & Preprocessing
+Handled null values in key columns
+Standardized date formats
+Removed inconsistent or irrelevant records
+Verified integrity of cumulative metrics
+📊 Analysis & Insights
+1. Case Fatality Rate (CFR)
+Measures severity of the disease
+Countries with high CFR show possible:
+Underreporting of cases
+Healthcare limitations
+2. Infection Rate vs Population
+Identifies countries with highest spread relative to population
+Smaller countries often show higher penetration
+3. Regional Contribution
+Certain regions disproportionately contributed to total deaths
+Highlights localized outbreak severity
+4. First 100 Deaths Benchmark
+Measures speed of outbreak escalation
+Faster progression indicates uncontrolled spread
+5. Global Hotspot Center
+Identifies geographic clustering of high-case regions
+Useful for understanding spread concentration
+6. Recovery Lag Analysis
+Recoveries lag behind confirmed cases
+Indicates delay in treatment/recovery cycles
+7. Data Integrity Check
+Some countries reported:
+Recoveries + deaths > confirmed cases
+Suggests reporting inconsistencies
+📈 Trend Analysis
+8. 7-Day Moving Average
+Smooths fluctuations in daily reporting
+Reveals actual trend direction
+9. Peak Case Identification
+Countries peaked at different times
+Some peaks aligned → global surge phases
+10. Doubling Rate
+Early pandemic showed exponential growth
+Different continents had varying growth speeds
+11. Month-over-Month Growth
+2020 saw rapid escalation in specific months
+Identifies critical phases of pandemic spread
+12. Sustained Decline
+Few countries achieved consistent decline
+Indicates effectiveness of control measures
+📊 Dashboard (Power BI)
+Filled Map → Country-level spread
+Line Charts → Trend analysis
+Pie Charts → Distribution insights
+<img width="971" height="550" alt="image" src="https://github.com/user-attachments/assets/0d1d7d76-a8c9-48eb-b195-42d182c1e30a" />
 
----
+⚠️ Limitations
+Data inconsistencies across countries
+Underreporting in some regions
+Delays in reporting
+✅ Conclusion
 
-## 🧹 PART 1: Data Preprocessing
+The analysis highlights that COVID-19 was not just a health crisis but a data challenge, with variations in:
 
-Before performing analysis, the dataset was cleaned and standardized to ensure data consistency and accurate joins.
-
-### 🔧 Key Cleaning Steps
-
-1. **Standardizing Country Names**  
-   Fixed inconsistencies between datasets (e.g., population vs COVID data)  
-   Examples:  
-   - Bahamas, The → Bahamas  
-   - US → USA  
-   - Burma → Myanmar  
-   - Holy See → Vatican City  
-
-2. **Resolving Naming Conflicts**  
-   Unified country names across both datasets to enable proper joins  
-   Handled special cases:  
-   - Congo split into:  
-     - Congo (Kinshasa)  
-     - Congo (Brazzaville)  
-
-3. **Province-Level Adjustments**  
-   Ensured consistency where countries had province/state-level entries  
-   Updated mismatched `country_region` and `province` values  
-
-4. **Data Alignment for Joins**  
-   Matched `country_region` (COVID data) with `country_name` (population data)  
-   Ensured compatibility for analytical queries like infection rates
-
-5. **Handling Missing (NULL) Values**  
-   Ensured data completeness and accuracy by addressing missing values:  
-   - Treated NULL values in numerical fields (e.g., confirmed, deaths, recoveries) to avoid incorrect aggregations  
-   - Applied default values where appropriate to maintain continuity in time-series analysis  
-   - Prevented NULL values from impacting window functions and trend calculations  
-
-### 🎯 Outcome of Preprocessing
-
-- Eliminated data mismatches  
-- Enabled accurate joins between datasets  
-- Improved reliability of all downstream analysis  
-
----
-
-## 📈 PART 2: Data Analysis
-
-The analysis focuses on two major aspects:
-
-### 🔹 Impact & Scale
-
-1. Case Fatality Rate (CFR)  
-2. Infection Rate vs Population  
-3. Regional Contribution to Deaths  
-4. Growth Benchmarks  
-5. Global Hotspot Analysis  
-6. Recovery Lag Analysis  
-7. Data Integrity Checks  
-
----
-
-### ⚡ Momentum & Trends
-
-8. Rolling Averages (7-day smoothing)  
-9. Peak Case Identification  
-10. Doubling Rate Analysis  
-11. Month-over-Month Growth  
-12. Sustained Decline Detection  
-
----
-
-## 🧠 Key Concepts Used
-
-- Window Functions (`LAG`, `ROW_NUMBER`, `SUM OVER`)  
-- Common Table Expressions (CTEs)  
-- Aggregations (`SUM`, `AVG`)  
-- Joins (multi-table analysis)  
-- Data Cleaning & Standardization  
-- Time-Series Analysis  
-
----
-
-## 📂 Dataset
-
-**COVID Data**
-- confirmed, deaths, recoveries  
-- Country + province-level granularity  
-
-**Population Data**
-- Country-wise population (2020, 2021, 2022)  
-
----
-
-## 🚀 Key Insights
-
-- Significant variation in fatality rates across countries  
-- Population-normalized metrics reveal true impact  
-- Regional disparities within countries are substantial  
-- Pandemic growth followed distinct global waves  
-
----
-
-## 🛠️ Tech Stack
-
-- SQL (MySQL)  
-- Relational Data Modeling  
-- Analytical Query Design  
-
----
-
-## 📌 Conclusion
-
-This project demonstrates how raw, inconsistent real-world data can be transformed into meaningful insights using SQL. It highlights:
-
-- Importance of data cleaning before analysis  
-- Power of window functions for time-series analysis  
-- Value of contextual metrics (like population-adjusted rates)  
+Reporting accuracy
+Healthcare response
+Spread dynamics
